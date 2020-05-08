@@ -1,0 +1,1066 @@
+<!-- list of default components for the visual builder component library -->
+<PaletteNodes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<PaletteNode>
+    <title>&lt;b&gt;Grids&lt;/b&gt;</title>
+    <isHeader>true</isHeader>
+    <enabled>false</enabled>
+    <canSelect>false</canSelect>
+    <!-- This node is not a dragable component -->
+    <canDrag xsi:type="boolean">false</canDrag>
+    <children>
+        <PaletteNode>
+            <title>&lt;b&gt;ListGrid&lt;/b&gt;</title>
+            <type>ListGrid</type>
+            <idName>Grid</idName>
+            <icon>[TOOLSIMG]classes/ListGrid.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <children>
+                <PaletteNode>
+                    <title>ListGridField</title>
+                    <type>ListGridField</type>
+                    <icon>[TOOLSIMG]classes/TextItem.png</icon>
+                    <iconSize>18</iconSize>
+                </PaletteNode>
+            </children>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;Editable ListGrid&lt;/b&gt;</title>
+            <type>ListGrid</type>
+            <icon>[TOOLSIMG]classes/ListGrid.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <defaults xsi:type="ListGrid">
+                <showFilterEditor>true</showFilterEditor>
+                <canEdit>true</canEdit>
+                <canRemoveRecords>true</canRemoveRecords>
+                <listEndEditAction>next</listEndEditAction>
+            </defaults>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;TreeGrid&lt;/b&gt;</title>
+            <type>TreeGrid</type>
+            <icon>[TOOLSIMG]classes/TreeGrid.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <children>
+                <PaletteNode>
+                    <title>TreeGridField</title>
+                    <type>TreeGridField</type>
+                    <icon>[TOOLSIMG]classes/TextItem.png</icon>
+                    <iconSize>18</iconSize>
+                </PaletteNode>
+            </children>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;TileGrid&lt;/b&gt;</title>
+            <type>TileGrid</type>
+            <icon>[TOOLSIMG]classes/TileGrid.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <children>
+                <PaletteNode>
+                    <title>TileGridField</title>
+                    <type>TileGridField</type>
+                    <icon>[TOOLSIMG]classes/TextItem.png</icon>
+                    <iconSize>18</iconSize>
+                </PaletteNode>
+            </children>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;DetailGrid&lt;/b&gt;</title>
+            <idName>DetailGrid</idName>
+            <type>DetailViewer</type>
+            <icon>[TOOLSIMG]classes/DetailViewer.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <prompt>Shows one or more records, where each field of each record takes up one visual line.
+                DetailGrid is less compact than ListGrid, and should be used for single records or
+                smaller numbers of records, especially for showing all of the fields of the selected
+                record in a ListGrid</prompt>
+            <children>
+                <PaletteNode>
+                    <title>DetailGridField</title>
+                    <idName>DetailGridField</idName>
+                    <type>DetailViewerField</type>
+                    <icon>[TOOLSIMG]classes/TextItem.png</icon>
+                    <iconSize>18</iconSize>
+                </PaletteNode>
+            </children>
+        </PaletteNode>
+
+    </children>
+</PaletteNode>
+
+<PaletteNode>
+    <title>&lt;b&gt;Layouts&lt;/b&gt;</title>
+    <isHeader>true</isHeader>
+    <enabled>false</enabled>
+    <canSelect>false</canSelect>
+    <!-- This node is not a dragable component -->
+    <canDrag xsi:type="boolean">false</canDrag>
+    <children>
+        <PaletteNode>
+            <title>&lt;b&gt;TabSet&lt;/b&gt;</title>
+            <children>
+                <PaletteNode>
+                    <title>Tab</title>
+                    <type>Tab</type>
+                    <icon>[TOOLSIMG]classes/Tab.png</icon>
+                    <showDropIcon>true</showDropIcon>
+                    <autoAddChild ref="vlayout"/>
+                </PaletteNode>
+            </children>
+            <type>TabSet</type>
+            <defaults>
+                <destroyPanes xsi:type="boolean">false</destroyPanes>
+            </defaults>
+            <icon>[TOOLSIMG]classes/TabSet.png</icon>
+            <showDropIcon>true</showDropIcon>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;SplitPane&lt;/b&gt;</title>
+            <type>SplitPane</type>
+            <icon>[TOOLSIMG]classes/SplitPane.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <prompt>A device-sensitive layout that shows two panes side-by-side on desktops
+                    and tablets, and a single pane for phones. Use the Navigate Detail Pane
+                    action or Workflow Task to transition to the Detail pane. SplitPane
+                    automatically provides back navigation.
+                    &lt;p&gt;
+                    If you don't need device-sensitive features, just use an HLayout instead.
+            </prompt>
+            <defaults>
+                <autoNavigate xsi:type="boolean">true</autoNavigate>
+            </defaults>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;TriplePane&lt;/b&gt;</title>
+            <type>TriplePane</type>
+            <icon>[TOOLSIMG]classes/TriplePane.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <prompt>A device-sensitive layout that shows three panes at once on desktop,
+                    two on tablets, and a single pane for phones.
+                    &lt;ul&gt;
+                    &lt;li&gt;Use the Navigate List Pane action or Workflow task to transition
+                        to the List pane&lt;/li&gt;
+                    &lt;li&gt;Use the Navigate Detail Pane action or Workflow task to transition
+                        to the Detail pane&lt;/li&gt;
+                    &lt;/ul&gt;
+                    TriplePane automatically provides back navigation.
+            </prompt>
+            <defaults>
+                <autoNavigate xsi:type="boolean">true</autoNavigate>
+            </defaults>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;NavPanel&lt;/b&gt;</title>
+            <type>NavPanel</type>
+            <icon>[TOOLSIMG]classes/SectionStack.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <prompt>A layout that shows a tree of available options in the left pane, and in
+                    the right pane will show different components as different options are
+                    clicked on in the tree.
+                    &lt;p&gt;
+                    Drag NavItems to the left pane of the NavPanel to create options.
+                    Dragging a component to the right pane will cause that component to be
+                    shown when the selected option is clicked by the user.
+                    &lt;p&gt;
+                    NavPanel is device-sensitive just like SplitPane, and will switch to
+                    showing only the tree of options or only the right-hand pane on phones,
+                    with automatic navigation between the two panes.
+            </prompt>
+            <defaults>
+                <isTree>false</isTree>
+                <defaultToFirstItem>true</defaultToFirstItem>
+            </defaults>
+            <children>
+                <PaletteNode>
+                    <title>NavItem</title>
+                    <type>NavItem</type>
+                    <icon>[TOOLSIMG]classes/SectionStackSection.png</icon>
+                    <showDropIcon>true</showDropIcon>
+                </PaletteNode>
+                <PaletteNode>
+                    <title>NavSeparator</title>
+                    <idName>NavSeparator</idName>
+                    <type>NavItem</type>
+                    <icon>[TOOLSIMG]classes/SectionStackSection.png</icon>
+                    <showDropIcon>true</showDropIcon>
+                    <defaults>
+                        <isSeparator>true</isSeparator>
+                    </defaults>
+                </PaletteNode>
+                <PaletteNode>
+                    <title>NavHeader</title>
+                    <idName>NavHeader</idName>
+                    <type>NavItem</type>
+                    <icon>[TOOLSIMG]classes/SectionStackSection.png</icon>
+                    <showDropIcon>true</showDropIcon>
+                    <defaults>
+                        <isHeader>true</isHeader>
+                    </defaults>
+                </PaletteNode>
+            </children>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;Deck&lt;/b&gt;</title>
+            <type>Deck</type>
+            <icon>[TOOLSIMG]classes/Deck.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <prompt>A container where only one contained component is visible at any time,
+                    like a Tab Set with no tabs. Use a Deck in combination with Show &amp;
+                    Hide actions to manage which component is visible.</prompt>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;SectionStack&lt;/b&gt;</title>
+            <type>SectionStack</type>
+            <icon>[TOOLSIMG]classes/SectionStack.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <defaults>
+                <visibilityMode>multiple</visibilityMode>
+            </defaults>
+            <children>
+                <PaletteNode>
+                    <title>Section</title>
+                    <type>SectionStackSection</type>
+                    <idName>Section</idName>
+                    <icon>[TOOLSIMG]classes/SectionStackSection.png</icon>
+                    <showDropIcon>true</showDropIcon>
+                    <defaults>
+                        <autoShow>true</autoShow>
+                    </defaults>
+                </PaletteNode>
+            </children>
+        </PaletteNode>
+
+        <PaletteNode refID="vlayout">
+            <title>&lt;b&gt;VLayout&lt;/b&gt;</title>
+            <type>VLayout</type>
+            <icon>[TOOLSIMG]classes/VLayout.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <prompt>Vertically stacks any contained components, and stretches eligible components
+                    vertically to fill available space.</prompt>
+            <insertContainer ifDropClass="Portlet">
+                <type>PortalLayout</type>
+            </insertContainer>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;HLayout&lt;/b&gt;</title>
+            <type>HLayout</type>
+            <icon>[TOOLSIMG]classes/HLayout.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <prompt>Places contained components side-by-side, and stretches eligible components
+                    horizontally to fill available space.</prompt>
+            <insertContainer ifDropClass="Portlet">
+                <type>PortalLayout</type>
+            </insertContainer>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;Resize Bar&lt;/b&gt;</title>
+            <type>LayoutResizeBar</type>
+            <icon>[TOOLSIMG]classes/ResizeBar.png</icon>
+            <restrictToTarget class="Layout" />
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;FlexSpacer&lt;/b&gt;</title>
+            <type>FlexSpacer</type>
+            <icon>[TOOLSIMG]classes/LayoutSpacer.png</icon>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;FixedSpacer&lt;/b&gt;</title>
+            <type>FixedSpacer</type>
+            <icon>[TOOLSIMG]classes/LayoutSpacer.png</icon>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;TileLayout&lt;/b&gt;</title>
+            <type>TileLayout</type>
+            <icon>[TOOLSIMG]classes/ListGrid.png</icon>
+            <showDropIcon>true</showDropIcon>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;FlowLayout&lt;/b&gt;</title>
+            <type>FlowLayout</type>
+            <icon>[TOOLSIMG]classes/ToolStrip.png</icon>
+            <prompt>Places contained components side-by-side until there is no more room,
+                    then starts on a new row.  Rearranges contained components
+                    if the Flow Layout is resized.</prompt>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;PortalLayout&lt;/b&gt;</title>
+            <type>PortalLayout</type>
+            <icon>[TOOLSIMG]classes/PortalLayout.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <children>
+                <PaletteNode>
+                    <title>Portlet</title>
+                    <type>Portlet</type>
+                    <icon>[TOOLSIMG]classes/Window.png</icon>
+                    <showDropIcon>true</showDropIcon>
+                    <restrictToTarget class="Layout" />
+                </PaletteNode>
+                <PaletteNode>
+                    <title>PortalColumn</title>
+                    <type>PortalColumn</type>
+                    <icon>[TOOLSIMG]classes/VLayout.png</icon>
+                    <showDropIcon>true</showDropIcon>
+                    <restrictToTarget class="PortalLayout" />
+                </PaletteNode>
+            </children>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;Modal Window&lt;/b&gt;</title>
+            <type>ModalWindow</type>
+            <idName>Window</idName>
+            <icon>[TOOLSIMG]classes/Window.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <isClosed>true</isClosed>
+            <alwaysAllowRootDrop>true</alwaysAllowRootDrop>
+            <canDragInPreview>false</canDragInPreview>
+            <canReparent>false</canReparent>
+            <modalVisibility>true</modalVisibility>
+            <children>
+                <PaletteNode>
+                    <title>Header Controls</title>
+                    <isClosed>true</isClosed>
+                    <children>
+                        <PaletteNode>
+                            <title>Icon</title>
+                            <type>WindowHeaderIcon</type>
+                            <icon>[SKINIMG]Window/headerIcon.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>headerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>Label</title>
+                            <type>WindowHeaderLabel</type>
+                            <icon>[TOOLSIMG]classes/Label.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>headerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>Minimize Button</title>
+                            <type>WindowMinimizeButton</type>
+                            <icon>[SKINIMG]Window/minimize.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>headerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>Maximize Button</title>
+                            <type>WindowMaximizeButton</type>
+                            <icon>[SKINIMG]Window/maximize.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>headerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>Close Button</title>
+                            <type>WindowCloseButton</type>
+                            <icon>[SKINIMG]Window/close.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>headerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                    </children>
+                </PaletteNode>
+                <PaletteNode>
+                    <title>Footer Controls</title>
+                    <isClosed>true</isClosed>
+                    <children>
+                        <PaletteNode>
+                            <title>Spacer</title>
+                            <type>WindowFooterSpacer</type>
+                            <icon>[TOOLSIMG]classes/LayoutSpacer.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>footerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>Resizer</title>
+                            <type>WindowResizer</type>
+                            <icon>[SKINIMG]Window/resizer.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>footerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                    </children>
+                </PaletteNode>
+            </children>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;Inline Window&lt;/b&gt;</title>
+            <type>InlineWindow</type>
+            <idName>Window</idName>
+            <defaults>
+                <showShadow xsi:type="boolean">false</showShadow>
+                <showMinimizeButton>true</showMinimizeButton>
+            </defaults>
+            <icon>[TOOLSIMG]classes/Window.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <isClosed>true</isClosed>
+            <children>
+                <PaletteNode>
+                    <title>Header Controls</title>
+                    <isClosed>true</isClosed>
+                    <children>
+                        <PaletteNode>
+                            <title>Icon</title>
+                            <type>WindowHeaderIcon</type>
+                            <icon>[SKINIMG]Window/headerIcon.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>headerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>Label</title>
+                            <type>WindowHeaderLabel</type>
+                            <icon>[TOOLSIMG]classes/Label.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>headerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>Minimize Button</title>
+                            <type>WindowMinimizeButton</type>
+                            <icon>[SKINIMG]Window/minimize.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>headerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>Maximize Button</title>
+                            <type>WindowMaximizeButton</type>
+                            <icon>[SKINIMG]Window/maximize.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>headerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>Close Button</title>
+                            <type>WindowMaximizeButton</type>
+                            <icon>[SKINIMG]Window/close.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>headerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                    </children>
+                </PaletteNode>
+                <PaletteNode>
+                    <title>Footer Controls</title>
+                    <isClosed>true</isClosed>
+                    <children>
+                        <PaletteNode>
+                            <title>Spacer</title>
+                            <type>WindowFooterSpacer</type>
+                            <icon>[TOOLSIMG]classes/LayoutSpacer.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>footerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>Resizer</title>
+                            <type>WindowResizer</type>
+                            <icon>[SKINIMG]Window/resizer.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <defaults>
+                                <parentProperty>footerControls</parentProperty>
+                            </defaults>
+                        </PaletteNode>
+                    </children>
+                </PaletteNode>
+            </children>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;Absolute Container&lt;/b&gt;</title>
+            <type>AbsoluteContainer</type>
+            <icon>[TOOLSIMG]classes/DetailViewer.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <prompt>Container where components are placed and sized by hand, by dragging them
+                    around or editing their properties.</prompt>
+            <editProxyProperties>
+                <persistCoordinates>true</persistCoordinates>
+                <childrenSnapToGrid>true</childrenSnapToGrid>
+                <childrenSnapAlign>true</childrenSnapAlign>
+            </editProxyProperties>
+        </PaletteNode>
+    </children>
+</PaletteNode>
+
+<PaletteNode>
+    <title>&lt;b&gt;Forms&lt;/b&gt;</title>
+    <isHeader>true</isHeader>
+    <enabled>false</enabled>
+    <canSelect>false</canSelect>
+    <!-- This node is not a dragable component -->
+    <canDrag xsi:type="boolean">false</canDrag>
+    <children>
+        <PaletteNode>
+            <title>&lt;b&gt;Table Layout Form&lt;/b&gt;</title>
+            <idName>Form</idName>
+            <type>DynamicForm</type>
+            <icon>[TOOLSIMG]classes/DynamicForm.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <prompt>Form for user input, where items are are laid out in rows from left to
+                    right until the specified number of columns is filled, then a new row is
+                    begun. You can configure the Number of Columns property for the form as a
+                    whole, as well as have individual items span multiple rows or columns, or
+                    cause them to start or end rows.  Most items that show a label take up two
+                    columns, while others, like buttons, take up one but start a new row by
+                    default. &lt;img width="350" height="181" src="/tools/visualBuilder/graphics/TableLayoutFormOverview.png"/&gt;</prompt>
+            <insertContainer ifDropClass="Canvas">
+                <type>CanvasItem</type>
+                <defaults>
+                    <showTitle xsi:type="boolean">false</showTitle>
+                    <startRow xsi:type="boolean">true</startRow>
+                    <endRow xsi:type="boolean">true</endRow>
+                    <width>*</width>
+                    <colSpan>*</colSpan>
+                </defaults>
+            </insertContainer>
+        </PaletteNode>
+        <PaletteNode>
+            <title>&lt;b&gt;Search Form&lt;/b&gt;</title>
+            <type>SearchForm</type>
+            <icon>[TOOLSIMG]classes/SearchForm.png</icon>
+            <showDropIcon>true</showDropIcon>
+        </PaletteNode>
+        <PaletteNode>
+            <title>&lt;b&gt;Hand-Placed Form&lt;/b&gt;</title>
+            <idName>HandPlacedForm</idName>
+            <type>AbsoluteForm</type>
+            <icon>[TOOLSIMG]classes/AbsoluteForm.png</icon>
+            <showDropIcon>true</showDropIcon>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;Form Fields&lt;/b&gt;</title>
+            <icon>[TOOLSIMG]classes/TextItem.png</icon>
+            <iconSize>18</iconSize>
+            <showDropIcon>true</showDropIcon>
+            <!-- This node is not a dragable component -->
+            <canDrag xsi:type="boolean">false</canDrag>
+            <children>
+                <PaletteNode>
+                    <title>Section</title>
+                    <type>SectionItem</type>
+                    <idName>Field</idName>
+                    <icon>[TOOLSIMG]classes/SectionItem.png</icon>
+                    <showDropIcon>true</showDropIcon>
+                </PaletteNode>
+                <PaletteNode>
+                    <title>&lt;b&gt;Text&lt;/b&gt;</title>
+                    <type>TextItem</type>
+                    <icon>[TOOLSIMG]classes/TextItem.png</icon>
+                    <idName>Field</idName>
+                    <iconSize>18</iconSize>
+                    <excludeFromSearch>true</excludeFromSearch>
+                    <isClosed>true</isClosed>
+                    <children>
+                        <PaletteNode>
+                            <title>text</title>
+                            <type>TextItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/TextItem.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>password</title>
+                            <type>PasswordItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/PasswordItem.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>upload</title>
+                            <type>FileItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/FileItem.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>textArea</title>
+                            <type>TextAreaItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/TextAreaItem.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>hidden</title>
+                            <type>HiddenItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/HiddenItem.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>staticText</title>
+                            <type>StaticTextItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/StaticTextItem.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>link</title>
+                            <type>LinkItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/LinkItem.png</icon>
+                            <iconSize>18</iconSize>
+                            <defaults>
+                                <target>_blank</target>
+                            </defaults>
+                        </PaletteNode>
+                    </children>
+                </PaletteNode>
+                <PaletteNode>
+                    <title>&lt;b&gt;Choosers&lt;/b&gt;</title>
+                    <type>SelectItem</type>
+                    <icon>[TOOLSIMG]classes/SelectItem.png</icon>
+                    <idName>Field</idName>
+                    <showDropIcon>true</showDropIcon>
+                    <iconSize>18</iconSize>
+                    <isClosed>true</isClosed>
+                    <children>
+                        <PaletteNode>
+                            <title>checkbox</title>
+                            <type>CheckboxItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/CheckBoxItem.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>radioGroup</title>
+                            <type>RadioGroupItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/RadioGroup.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>select</title>
+                            <type>SelectItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/SelectItem.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <iconSize>18</iconSize>
+                            <isClosed>true</isClosed>
+                            <children>
+                                <PaletteNode>
+                                    <title>DropDownField</title>
+                                    <type>DropDownField</type>
+                                    <icon>[TOOLSIMG]classes/TextItem.png</icon>
+                                    <iconSize>18</iconSize>
+                                </PaletteNode>
+                            </children>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>selectOther</title>
+                            <type>SelectOtherItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/SelectOtherItem.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>comboBox</title>
+                            <type>ComboBoxItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/ComboBoxItem.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <iconSize>18</iconSize>
+                            <isClosed>true</isClosed>
+                            <children>
+                                <PaletteNode>
+                                    <title>DropDownField</title>
+                                    <type>DropDownField</type>
+                                    <icon>[TOOLSIMG]classes/TextItem.png</icon>
+                                    <iconSize>18</iconSize>
+                                </PaletteNode>
+                            </children>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>date</title>
+                            <type>DateItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/DateChooser.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>time</title>
+                            <type>TimeItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/TimeItem.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>slider</title>
+                            <type>SliderItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/Slider.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                    </children>
+                </PaletteNode>
+                <PaletteNode>
+                    <title>&lt;b&gt;Buttons&lt;/b&gt;</title>
+                    <type>ButtonItem</type>
+                    <icon>[TOOLSIMG]classes/Button.png</icon>
+                    <idName>Button</idName>
+                    <iconSize>18</iconSize>
+                    <excludeFromSearch>true</excludeFromSearch>
+                    <isClosed>true</isClosed>
+                    <children>
+                        <PaletteNode refID="buttonItem">
+                            <title>button</title>
+                            <type>ButtonItem</type>
+                            <idName>Button</idName>
+                            <icon>[TOOLSIMG]classes/Button.png</icon>
+                            <iconSize>18</iconSize>
+                            <excludeFromSearch>true</excludeFromSearch>
+                            <substituteDrop ifNotParentClass="DynamicForm" useNode="button"/>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>submit</title>
+                            <type>SubmitItem</type>
+                            <idName>Button</idName>
+                            <icon>[TOOLSIMG]classes/SubmitItem.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>reset</title>
+                            <type>ResetItem</type>
+                            <idName>Button</idName>
+                            <icon>[TOOLSIMG]classes/ResetItem.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>toolbar</title>
+                            <type>ToolbarItem</type>
+                            <idName>Toolbar</idName>
+                            <icon>[TOOLSIMG]classes/ToolStrip.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                    </children>
+                </PaletteNode>
+                <PaletteNode>
+                    <title>&lt;b&gt;Display&lt;/b&gt;</title>
+                    <isClosed>true</isClosed>
+                    <type>StaticTextItem</type>
+                    <idName>Field</idName>
+                    <icon>[TOOLSIMG]classes/StaticTextItem.png</icon>
+                    <iconSize>18</iconSize>
+                    <excludeFromSearch>true</excludeFromSearch>
+                    <children>
+                        <PaletteNode>
+                            <title>staticText</title>
+                            <type>StaticTextItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/StaticTextItem.png</icon>
+                            <iconSize>18</iconSize>
+                            <excludeFromSearch>true</excludeFromSearch>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>blurb</title>
+                            <type>BlurbItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/BlurbItem.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>header</title>
+                            <type>HeaderItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/Header.png</icon>
+                            <iconSize>18</iconSize>
+                            <prompt>A header that separates parts of a form. To create a
+                                    similar looking header outside of a form, use either a
+                                    SectionStack (which also allows expand/collapse of sections)
+                                    or the Header component (under Display) instead</prompt>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>rowSpacer</title>
+                            <type>RowSpacerItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/RowSpacer.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                        <PaletteNode>
+                            <title>colSpacer</title>
+                            <type>SpacerItem</type>
+                            <idName>Field</idName>
+                            <icon>[TOOLSIMG]classes/SpacerItem.png</icon>
+                            <iconSize>18</iconSize>
+                        </PaletteNode>
+                    </children>
+                </PaletteNode>
+                <PaletteNode>
+                    <title>Add Icon to Input</title>
+                    <type>FormItemIcon</type>
+                    <icon>cube_blue.png</icon>
+                    <showDropIcon>true</showDropIcon>
+                    <defaults>
+                        <parentProperty>icons</parentProperty>
+                    </defaults>
+                </PaletteNode>
+            </children>
+        </PaletteNode>
+    </children>
+</PaletteNode>
+
+<PaletteNode>
+    <title>&lt;b&gt;Controls&lt;/b&gt;</title>
+    <isHeader>true</isHeader>
+    <enabled>false</enabled>
+    <canSelect>false</canSelect>
+    <!-- This node is not a dragable component -->
+    <canDrag xsi:type="boolean">false</canDrag>
+    <children>
+        <PaletteNode>
+            <title>&lt;b&gt;ToolStrip&lt;/b&gt;</title>
+            <type>ToolStrip</type>
+            <icon>[TOOLSIMG]classes/ToolStrip.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <children>
+                <PaletteNode>
+                    <title>ToolStripButton</title>
+                    <type>ToolStripButton</type>
+                    <icon>[TOOLSIMG]classes/Button.png</icon>
+                    <idName>Button</idName>
+                    <prompt>Like a normal Button, but with the appearance expected in a ToolStrip</prompt>
+                    <substituteDrop ifNotParentClass="ToolStrip" useNode="button"/>
+                </PaletteNode>
+                <PaletteNode refID="toolstripmenubutton">
+                    <title>ToolStripMenuButton</title>
+                    <type>ToolStripMenuButton</type>
+                    <icon>[TOOLSIMG]classes/Button.png</icon>
+                    <prompt>Like a MenuButton, but with the appearance expected in a ToolStrip.
+                            &lt;p&gt;A button that shows a menu when pressed.  When you add a
+                            ToolStripMenuButton, a Menu is automatically added.  Add MenuItems
+                            to create individual entries.  Click on each MenuItem in the Component
+                            Tree to edit it, using the Events tab to configure actions for the
+                            menu item.</prompt>
+                    <isClosed>true</isClosed>
+                    <autoAddChild ref="menu"/>
+                    <addToChild ifDropClass="MenuItem" childClass="Menu" createFrom="menu" />
+                    <substituteDrop ifNotParentClass="ToolStrip" useNode="menubutton"/>
+                    <children>
+                        <PaletteNode>
+                            <parentName>0</parentName>
+                            <title>&lt;b&gt;Menu&lt;/b&gt;</title>
+                            <type>Menu</type>
+                            <icon>[TOOLSIMG]classes/Menu.png</icon>
+                            <showDropIcon>true</showDropIcon>
+                            <excludeFromSearch>true</excludeFromSearch>
+                            <prompt>A container for MenuItems, where appearance and behavior for the overall
+                                    menu can be configured.  Add MenuItems to the Menu to create and configure
+                                    individual menu items.</prompt>
+                            <children>
+                                <PaletteNode>
+                                    <title>Menu Item</title>
+                                    <type>MenuItem</type>
+                                    <idName>Item</idName>
+                                    <icon>[TOOLSIMG]classes/MenuItem.png</icon>
+                                    <excludeFromSearch>true</excludeFromSearch>
+                                    <prompt>A single entry in a Menu.  First add a Menu to a ToolStripMenuButton, or a
+                                            ContextMenu to other kinds of components, then add MenuItems to
+                                            create individual entries.</prompt>
+                                </PaletteNode>
+                            </children>
+                        </PaletteNode>
+                    </children>
+                </PaletteNode>
+                <PaletteNode>
+                    <title>Separator</title>
+                    <type>ToolStripSeparator</type>
+                    <icon>[TOOLSIMG]classes/ToolStripSeparator.png</icon>
+                </PaletteNode>
+                <PaletteNode>
+                    <title>Resizer</title>
+                    <type>ToolStripResizer</type>
+                    <icon>[TOOLSIMG]classes/Tab.png</icon>
+                </PaletteNode>
+                <PaletteNode>
+                    <title>Spacer</title>
+                    <type>ToolStripSpacer</type>
+                    <icon>[TOOLSIMG]classes/LayoutSpacer.png</icon>
+                </PaletteNode>
+            </children>
+        </PaletteNode>
+
+        <PaletteNode refID="button">
+            <title>&lt;b&gt;Button&lt;/b&gt;</title>
+            <type>IButton</type>
+            <idName>Button</idName>
+            <icon>[TOOLSIMG]classes/Button.png</icon>
+            <substituteDrop ifParentClass="DynamicForm" useNode="buttonItem"/>
+        </PaletteNode>
+
+        <PaletteNode refID="menubutton">
+            <title>&lt;b&gt;MenuButton&lt;/b&gt;</title>
+            <type>MenuButton</type>
+            <icon>[TOOLSIMG]classes/Button.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <prompt>A button that shows a menu when pressed.  When you add a MenuButton, a Menu is
+                    automatically added.  Add MenuItems to create individual entries.  Click on each
+                    MenuItem in the Component Tree to edit it, using the Events tab to configure
+                    actions for the menu item.</prompt>
+            <autoAddChild ref="menu"/>
+            <addToChild ifDropClass="MenuItem" childClass="Menu" createFrom="menu" />
+            <substituteDrop ifParentClass="ToolStrip" useNode="toolstripmenubutton"/>
+            <children>
+                <PaletteNode refID="menu">
+                    <parentName>0</parentName>
+                    <title>&lt;b&gt;Menu&lt;/b&gt;</title>
+                    <type>Menu</type>
+                    <icon>[TOOLSIMG]classes/Menu.png</icon>
+                    <showDropIcon>true</showDropIcon>
+                    <prompt>A container for MenuItems, where appearance and behavior for the overall
+                            menu can be configured.  Add MenuItems to the Menu to create and configure
+                            individual menu items.</prompt>
+                    <children>
+                        <PaletteNode>
+                            <title>Menu Item</title>
+                            <type>MenuItem</type>
+                            <idName>Item</idName>
+                            <icon>[TOOLSIMG]classes/MenuItem.png</icon>
+                            <prompt>A single entry in a Menu.  First add a Menu to a MenuButton, or a
+                                    ContextMenu to other kinds of components, then add MenuItems to
+                                    create individual entries.</prompt>
+                        </PaletteNode>
+                    </children>
+                </PaletteNode>
+            </children>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;IconButton&lt;/b&gt;</title>
+            <type>IconImgButton</type>
+            <idName>IconButton</idName>
+            <icon>[TOOLSIMG]classes/IconButton.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <prompt>A button that appears as a small icon. Pick from standard icons or add your own.</prompt>
+            <defaults>
+                <vertical xsi:type="boolean">false</vertical>
+            </defaults>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;Slider&lt;/b&gt;</title>
+            <type>Slider</type>
+            <icon>[TOOLSIMG]classes/Slider.png</icon>
+            <defaults>
+                <vertical xsi:type="boolean">false</vertical>
+            </defaults>
+        </PaletteNode>
+
+        <PaletteNode>
+            <parentName>0</parentName>
+            <title>&lt;b&gt;Context Menu&lt;/b&gt;</title>
+            <type>Menu</type>
+            <icon>[TOOLSIMG]classes/Menu.png</icon>
+            <showDropIcon>true</showDropIcon>
+            <prompt>A menu that appears when you context click (right-click or option-click depending
+                    on platform) a component.  Add MenuItems to the Menu to create and configure
+                    individual menu items.</prompt>
+            <children>
+                <PaletteNode>
+                    <title>Menu Item</title>
+                    <type>MenuItem</type>
+                    <idName>Item</idName>
+                    <icon>[TOOLSIMG]classes/MenuItem.png</icon>
+                    <excludeFromSearch>true</excludeFromSearch>
+                    <prompt>A single entry in a Menu.  First add a Menu to a MenuButton, or a
+                            ContextMenu to other kinds of components, then add MenuItems to
+                            create individual entries.</prompt>
+                </PaletteNode>
+            </children>
+        </PaletteNode>
+    </children>
+</PaletteNode>
+
+<PaletteNode>
+    <title>&lt;b&gt;Display&lt;/b&gt;</title>
+    <isHeader>true</isHeader>
+    <enabled>false</enabled>
+    <canSelect>false</canSelect>
+    <!-- This node is not a dragable component -->
+    <canDrag xsi:type="boolean">false</canDrag>
+    <children>
+        <PaletteNode>
+            <title>&lt;b&gt;Header&lt;/b&gt;</title>
+            <type>Header</type>
+            <icon>[TOOLSIMG]classes/Header.png</icon>
+            <prompt>A header to label components underneath it. This header 
+                    is a special type of ToolStrip, so any ToolStrip controls can
+                    be added to the Header. Consider also the SectionStack and
+                    SectionHeader if you want expand/collapse behavior or multiple
+                    sections.</prompt>
+            <defaults>
+                <title>Title</title>
+            </defaults>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;Label&lt;/b&gt;</title>
+            <type>Label</type>
+            <icon>[TOOLSIMG]classes/Label.png</icon>
+            <defaults>
+                <contents>Label</contents>
+                <height>20</height>
+            </defaults>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;HTMLPane&lt;/b&gt;</title>
+            <type>HTMLPane</type>
+            <icon>[TOOLSIMG]classes/HTMLPane.png</icon>
+        </PaletteNode>
+
+        <PaletteNode>
+            <title>&lt;b&gt;Image&lt;/b&gt;</title>
+            <idName>Image</idName>
+            <type>Img</type>
+            <icon>[TOOLSIMG]classes/Image.png</icon>
+            <prompt>An image is intended for static image logos, displaying photos such as
+                    employee headshots, headers and the like.</prompt>
+            <defaults>
+                <imageType>center</imageType>
+                <src>logo.png</src>
+                <showMenuOnClick>true</showMenuOnClick>
+                <width>100</width>
+                <height>100</height>
+            </defaults>
+        </PaletteNode>
+    </children>
+</PaletteNode>
+
+</PaletteNodes>

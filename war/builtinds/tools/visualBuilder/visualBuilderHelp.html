@@ -1,0 +1,79 @@
+<script>
+window.document.onkeydown = function(e) {
+  if (!e) {
+    e = event;
+  }
+  if (e.keyCode == 27) {
+    lightbox_close();
+  }
+}
+
+function lightbox_open(video) {
+  var lightBoxVideo = document.getElementById(video);
+  window.scrollTo(0, 0);
+  if (!lightBoxVideo) return;
+  lightBoxVideo.width = document.documentElement.clientWidth*0.6666;
+  lightBoxVideo.height = document.documentElement.clientHeight*0.6666;
+  document.getElementById('light_'+video).style.display = 'block';
+  document.getElementById('fade_'+video).style.display = 'block';
+  lightBoxVideo.play();
+}
+
+function lightbox_close(video) {
+  var lightBoxVideo = document.getElementById(video);
+  if (!lightBoxVideo) return;
+  document.getElementById('light_'+video).style.display = 'none';
+  document.getElementById('fade_'+video).style.display = 'none';
+  lightBoxVideo.pause();
+}
+</script>
+
+<b>Welcome to Reify.</b><br>
+The Reify low-code platform lets you visually design powerful, mobile-adaptive enterprise 
+applications in a collaborative cloud-based tool.  Reify creates 100% declarative code that 
+can be directly deployed for access from any device, or can be integrated into an IDE-based 
+project, while still editable in the cloud!
+<ol>
+    <li>
+        <b>Add data</b><br>
+        Drag DataSources from the "DataSources" tab and drop them onto databinding-capable 
+        components (such as Grids). Components will be auto-configured: Columns added to grids, 
+        fields added to table layouts, column and field types identified, etc.
+        <br><br>
+        <div style="border: 1px solid grey; padding-left:2px; padding-right:1px;">
+          <a href="#" onclick="lightbox_open('databindingV2');"><img width="235" src="/tools/visualBuilder/graphics/reify_video1.png"></a>
+        </div><br>
+    </li>
+    <li>
+        <b>Layout your screen</b><br>
+        To start, drag and drop components from the library onto the edit pane or component tree 
+        to layout your screens.
+        <br><br>
+        <div style="border: 1px solid grey; padding-left:1px; padding-right:1px;">
+          <a href="#" onclick="lightbox_open('reifyIntroLayoutsV2');"><img width="235" src="/tools/visualBuilder/graphics/reify_video2.png"></a>
+        </div><br>
+    </li>
+    <li>
+        <b>Set component properties</b><br>
+        Edit the properties to refine the functionality such as editability, size and alignment.
+    </li>
+    <li>
+        <b>Add behaviors</b><br>
+        In the Events tab, select a method (e.g. click, double click, etc.) then a corresponding 
+        to action to be performed when the event occurs. 
+    </li>
+    <li>
+        <b>Add Workflows</b><br>
+        From the Events tab, define workflows to control which actions should occur under certain 
+        circumstances.
+    </li>
+    <li>
+        <b>Validate your designs</b><br>
+        The "Project" menu allows you to 'share' with others to get feedback and validation.
+    </li>
+    <li>
+        <b>Write code without writing code</b><br>
+        Reify create 100% declarative code which can be exported from the Project menu for deployment, 
+        or edited further in a standard IDE. 
+    </li>
+</ol>
