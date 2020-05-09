@@ -26,17 +26,17 @@
 #     the servlet APIs provide no mechanism for writing to disk, means that some
 #     development tools like the FileAssembler will not work.
 #
-webRoot:__AUTODETECT__
+webRoot: __AUTODETECT__
 
 # Set this to the GWT module name.
-gwtModuleName:builtinds
+gwtModuleName: builtinds
 
 # if you've moved the isomorphic directory from its default location in webRoot,
 # set the root-relative path to it here
 #
 # For example, if in your deployment the 'isomorphic' dir is in /foo/bar, then set
 # then you'll need to set this to foo/bar/isomorphic
-isomorphicPathRootRelative:$gwtModuleName/sc
+isomorphicPathRootRelative: $gwtModuleName/sc
 
 
 # -------------- PICK DATABASE TO USE --------------------
@@ -46,13 +46,13 @@ isomorphicPathRootRelative:$gwtModuleName/sc
 # specify a different database to use here.
 
 # which database do you want to use?  HSQLDB is enabled by default.
-sql.defaultDatabase:Mysql
+sql.defaultDatabase: HSQLDB
 # Publish the JDBC endpoint for the defaultDatabase via JNDI at the specified path for use by
 # other frameworks such as Spring, Hibernate, etc.
 # Note that we do not use the java:comp or java:comp/env prefix because that
 # subtree is read-only on Tomcat (and possibly other containers) due to security
 # considerations
-sql.defaultDatabase.jndi.publish.path:isomorphic/jdbc/defaultDatabase
+sql.defaultDatabase.jndi.publish.path: isomorphic/jdbc/defaultDatabase
 
 
 # If you want to use Mysql instead, uncomment the following line
@@ -73,11 +73,11 @@ sql.defaultDatabase.jndi.publish.path:isomorphic/jdbc/defaultDatabase
 
 # -------------- SETTINGS FOR HSQLDB --------------------
 
-sql.HSQLDB.database.type:hsqldb
-sql.HSQLDB.interface.type:driverManager
+sql.HSQLDB.database.type: hsqldb
+sql.HSQLDB.interface.type: driverManager
 
-sql.HSQLDB.driver:org.hsqldb.jdbcDriver
-sql.HSQLDB.driver.url:jdbc:hsqldb:file:$webRoot/WEB-INF/db/hsqldb/isomorphic
+sql.HSQLDB.driver: org.hsqldb.jdbcDriver
+sql.HSQLDB.driver.url: jdbc:hsqldb:file:$webRoot/WEB-INF/db/hsqldb/isomorphic
 
 
 # -------------- LOADING APP AND DATASOURCE DEFINITIONS --------------------
@@ -87,10 +87,10 @@ sql.HSQLDB.driver.url:jdbc:hsqldb:file:$webRoot/WEB-INF/db/hsqldb/isomorphic
 # directory since DataSources are frequently shared between applications.  
 # "project.datasources" is also where the DataSource Importer tool looks 
 # for available DataSources.
-project.datasources:$webRoot/ds
-project.project:$webRoot/shared/ui
-project.ui:$webRoot/shared/ui
-project.apps:$webRoot/shared/app
+project.datasources: $webRoot/ds
+project.project: $webRoot/shared/ui
+project.ui: $webRoot/shared/ui
+project.apps: $webRoot/shared/app
 
 # -------------- Other settings --------------------
 # The setting RPCManager.enabledBuiltinMethods enables or disables the BuiltInRPCs - RPC calls
@@ -108,21 +108,4 @@ project.apps:$webRoot/shared/app
 
 # Note: modulesDir is only used with the loadISC and loadModules JSP tags; if
 # you intend to use those tags, do not change this setting
-modulesDir:modules/
-sql.Mysql.interface.type:drivermanager
-sql.Mysql.driver.context:
-sql.Mysql.driver:com.mysql.jdbc.Driver
-sql.Mysql.driver.databaseName:isomorphic
-sql.Mysql.driver.user:root
-sql.Mysql.driver.portNumber:3306
-sql.Mysql.interface.credentialsInURL:true
-sql.Mysql.database.type:mysql
-sql.Mysql.driver.networkProtocol:tcp
-sql.Mysql.driver.password:FTNYqTbjXCBqKi5Wj9ocLg==
-sql.Mysql.pool.enabled:true
-sql.Mysql.database.ansiMode:false
-sql.Mysql.driver.serverName:localhost
-sql.Mysql.driver.useUnicode:true
-sql.Mysql.driver.url:
-sql.Mysql.autoJoinTransactions:true
-sql.Mysql.driver.driverName:mysql
+modulesDir: modules/

@@ -14,6 +14,11 @@
 		<listener-class>com.isomorphic.base.InitListener</listener-class>
 	</listener>
     
+     <servlet>
+	     <servlet-name>CustomAfterInitServlet</servlet-name>
+	     <servlet-class>com.smartgwt.sample.server.servlet.CustomAfterInitServlet</servlet-class>
+	     <load-on-startup>2</load-on-startup>
+ 	 </servlet>
     <!-- Dynamic Compression -->
     <filter>
         <filter-name>CompressionFilter</filter-name>
