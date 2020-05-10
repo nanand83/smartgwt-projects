@@ -19,9 +19,9 @@
          <inherits name="com.smartgwt.debug.FileLoaderDebug"/>
          <inherits name="com.smartgwtee.debug.SmartGwtEENoThemeDebug"/>
          <inherits name="com.smartgwt.debug.RealtimeMessagingDebug"/>
-    -->
-    <inherits name="com.smartgwtee.SmartGwtEENoTheme"/>
+    -->    
     <inherits name="com.smartclient.theme.enterprise.Enterprise"/>
+    <inherits name="com.smartgwtee.SmartGwtEE"/>
 
     <!-- For some tools, you may need to inherit specific skin resources, such as tool skins.
          For example, VisualBuilder needs Tahoe and the tool skins, so you may need to add:
