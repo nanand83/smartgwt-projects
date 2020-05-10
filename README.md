@@ -1,5 +1,9 @@
 # smartgwt-projects
 
+### List of Utilities
+1. CustomCrypto - Implements static encrypt/decrypt methods that implements Symmetric Key encryption
+2. DataProcessor - Is a standalone SmartGwt Application that inserts bulk data into a SqlDataSource.
+
 #### May 8 2020:       
 1. Initial Commit.  
 2. Set up Eclipse workspace with smartgwt and gwt 
