@@ -24,9 +24,9 @@
   <inherits name="com.smartgwtee.tools.Tools"/>
   ```
 2. Implemented a Data Processor to perform a manual load of data into a SqlDataSource, in an attempt to understand the underpinnings:
-    a. Standalone SmartGwt application relies on server.properties - The ```webRoot``` setting is key.
-    b. ```ISCInit.go()``` prepares the SmartGwt environment. This is critical so as to work with DataSourceManager, ServletTools and other server-side SmartGwt tools.
-    c. Can prove useful if there's a need for Batch jobs running on same web-hosted environment. 
+    - Standalone SmartGwt application relies on server.properties - The ```webRoot``` setting is key.
+    - ```ISCInit.go()``` prepares the SmartGwt environment. This is critical so as to work with DataSourceManager, ServletTools and other server-side SmartGwt tools.
+    - Can prove useful if there's a need for Batch jobs running on same web-hosted environment. 
 
 
 #### Plan for Week of May 11 2020 -
