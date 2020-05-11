@@ -29,6 +29,18 @@
     - Can prove useful if there's a need for Batch jobs running on same web-hosted environment. 
 
 
+#### May 11 2020:
+1. Created an IPOBookBuildingApp with HLayout and SectionStack. 
+   ##### References/Credits: 
+   - https://www.smartclient.com/smartgwt/showcase/#featured_complete_app
+
+2. Created a Server-side SqlDatasource (xml-based) for ```bidsession```. Created schema objects using Admin Console.
+
+3. Created a Client-side RestDataSource for ```applications``` with static responses. The idea is to retrieve all entitled applications for the logged in SSO User, on load of the ApplicationListGrid component. 
+   ##### References/Credits:
+   - https://www.smartclient.com/smartgwt/showcase/#featured_restfulds 
+
+
 #### Plan for Week of May 11 2020 -
 1. Set up Datasources for a basic IPO BookBuilding Application - Objects are BidSession, Bid, Reference Data of Institutional investors.
 2. Explore Single SignOn / Tokens / Expiry page
