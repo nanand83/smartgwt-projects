@@ -1,0 +1,26 @@
+<response>  
+<status>0</status>  
+<startRow>0</startRow>  
+<endRow>3</endRow>  
+<totalRows>3</totalRows>  
+<data>  
+<record>  
+    <appId>90001</appId>  
+    <appName>Bid Session Application</appName>  
+    <has_access>true</has_access>  
+    <entitled>readonly</entitled>       
+</record>
+<record>  
+    <appId>90002</appId>  
+    <appName>Bid Entry System</appName>  
+    <has_access>true</has_access>  
+    <entitled>readwrite</entitled>       
+</record>  
+<record>  
+    <appId>90003</appId>  
+    <appName>XYZ System</appName>  
+    <has_access>false</has_access>  
+    <entitled></entitled>       
+</record>  
+</data>
+</response>

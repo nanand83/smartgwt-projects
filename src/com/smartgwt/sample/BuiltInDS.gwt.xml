@@ -58,5 +58,5 @@
     <!-- <extend-configuration-property name="scriptInjector.pageRelativeModulePath"
                                         value="builtinds=builtinds"/> -->
 
-    <entry-point class='com.smartgwt.sample.client.BuiltInDS'/>
+    <entry-point class='com.smartgwt.sample.client.IPOBBApplication'/>
 </module>

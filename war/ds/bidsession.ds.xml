@@ -1,0 +1,22 @@
+<DataSource
+    ID="bidsession"
+    serverType="sql"
+    tableName="bid_session">
+    <fields>
+        <field name="id"      title="Bid Session ID"     type="sequence"		primaryKey="true"  required="true"/>
+        <field name="back_stop_price"       title="Back Stop Price"         type="float"  required="true" />
+        <field name="client_name"             title="Client"           type="text"     length="128"		required="true"/> 
+        <field name="status"           title="Status"           type="enum">
+        	<valueMap>
+        		<value>Draft</value>
+        		<value>In Progress</value>
+        		<value>Priced</value>
+        		<value>Closed</value>
+        		<value>Withdrawn</value>
+        	</valueMap>
+        </field>
+        <field name="volume"    title="Volume"   type="long"  required="true" />
+        <field name="start_date"  title="Start Date"          type="date" />
+        <field name="end_date"          title="End Date"          type="date"/>
+    </fields>
+</DataSource>

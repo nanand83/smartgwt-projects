@@ -1,6 +1,5 @@
 package com.smartgwt.sample.client;
 
-import com.google.gwt.core.client.EntryPoint;
 import com.smartgwt.client.core.KeyIdentifier;
 import com.smartgwt.client.data.DSCallback;
 import com.smartgwt.client.data.DSRequest;
@@ -9,8 +8,8 @@ import com.smartgwt.client.data.DataSource;
 import com.smartgwt.client.data.Record;
 import com.smartgwt.client.types.SelectionStyle;
 import com.smartgwt.client.types.SortArrow;
-import com.smartgwt.client.util.PageKeyHandler;
 import com.smartgwt.client.util.Page;
+import com.smartgwt.client.util.PageKeyHandler;
 import com.smartgwt.client.util.SC;
 import com.smartgwt.client.widgets.IButton;
 import com.smartgwt.client.widgets.Label;
@@ -29,7 +28,8 @@ import com.smartgwt.client.widgets.viewer.DetailViewer;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class BuiltInDS implements EntryPoint {
+public class BuiltInDS { 
+//implements EntryPoint {
     private ListGrid boundList;
     private DynamicForm boundForm;
     private IButton saveBtn;
@@ -68,7 +68,7 @@ public class BuiltInDS implements EntryPoint {
         grid.setCanSort(false);
         grid.setFields(new ListGridField("dsTitle", "Select a DataSource"));
         grid.setData(new ListGridRecord[]{
-                new DSRecord("Animals", "animals"),
+        		new DSRecord("Animals", "animals"),
                 new DSRecord("Office Supplies", "supplyItem"),
                 new DSRecord("Employees", "employees")}
         );

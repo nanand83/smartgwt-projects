@@ -4,3 +4,10 @@ IPOBookBuildingApp.war
 .classpath
 war/WEB-INF/classes/**/*.xml
 gwt-unitCache/**
+war/WEB-INF/db
+war/WEB-INF/lib
+war/WEB-INF/classes
+war/WEB-INF/deploy
+war/builtinds/*.js
+war/builtinds/sc/skins/Tahoe
+war/WEB-INF/deploy/builtinds/symbolMaps
