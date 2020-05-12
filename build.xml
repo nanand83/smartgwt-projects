@@ -79,7 +79,7 @@
   <target name="war" depends="build" description="Create a war file">
     <copy todir="war/WEB-INF/lib" file="${gwt.sdk}/gwt-servlet.jar" />
     <copy todir="war/WEB-INF/lib" file="${gwt.sdk}/gwt-servlet-deps.jar" />
-    <zip destfile="IPOBookBuildingApp.war" basedir="war"/>
+  	<zip destfile="IPOBookBuildingApp.war" basedir="war"/>
   </target>
 
   <target name="clean" description="Cleans this project">

@@ -3,12 +3,13 @@ package com.smartgwt.sample.client;
 import com.google.gwt.core.client.EntryPoint;
 import com.smartgwt.client.data.Criteria;
 import com.smartgwt.client.types.VisibilityMode;
+import com.smartgwt.client.widgets.HTMLPane;
 import com.smartgwt.client.widgets.grid.ListGrid;
-import com.smartgwt.client.widgets.layout.HLayout;
 import com.smartgwt.client.widgets.layout.SectionStack;
 import com.smartgwt.client.widgets.layout.SectionStackSection;
+import com.smartgwt.client.widgets.layout.VLayout;
 
-public class IPOBBApplication extends HLayout implements EntryPoint {
+public class IPOBBApplication extends VLayout implements EntryPoint {
 
 	@Override
 	public void onModuleLoad() {
@@ -25,9 +26,37 @@ public class IPOBBApplication extends HLayout implements EntryPoint {
         alg.fetchData(userFilter);
         //alg.getHeader().hide();
         
+        HTMLPane htmlPane = new HTMLPane();        
+        htmlPane.setHeight("16%");
+        String htmlTableContents = 
+        				"<table style='width: 100%; color: #800000; background-image: url(images/IPO_strip.jpeg); background-repeat: repeat-x;'>" +
+        				"<tbody>" +
+        				"<tr>" +
+        				"<td style='width: 33%;'><span style='color: #800000;'>&nbsp;</span></td>" +
+        				"<td style='width: 44%;'>" +
+        				"<h1>IPO Book Building Suite</span></h1>" +
+        				"</td>" +
+        				"<td style='width: 23%;'>" +
+        				"<h4>Welcome User!<br />" +
+        				"<a href=''>Admin Console</a> | <a href=''>User Guide</a> | <a href=''>Support</a></h4>" +
+        				"</td>" +
+        				"</tr>" +
+        				"</tbody>" +
+        				"</table>";
+        
+        htmlPane.setContents(htmlTableContents);
+        
+        /*htmlPaneSection.addItem(htmlPane);
+        htmlPaneSection.addItem(label);
+        htmlPaneSection.setCanCollapse(false);
+        htmlPaneSection.setShowHeader(false);*/
+        
+        //topLayout.addChild(htmlPane);
+        addMember(htmlPane);
+        
         SectionStack leftSideLayout = new SectionStack();  
         leftSideLayout.setWidth(280);  
-        leftSideLayout.setShowResizeBar(true);  
+        leftSideLayout.setShowResizeBar(false);  
         leftSideLayout.setVisibilityMode(VisibilityMode.MULTIPLE);  
         leftSideLayout.setAnimateSections(true);  
   
