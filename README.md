@@ -48,6 +48,11 @@ Top, Left Application layout set up. And then some cosmetic changes.
 
 
 #### Plan for Week of May 11 2020 -
+Here's a screenshot of the updated webapp. I will update this from time to time.
+![Webapp Screenshot]
+(https://github.com/nanand83/smartgwt-projects/master/extras/webapp.png)
+
+
 1. Set up Datasources for a basic IPO BookBuilding Application - Objects are BidSession, Bid, Reference Data of Institutional investors.
 2. Explore Single SignOn / Tokens / Expiry page
 3. Explore Server Push / Messaging from Server
