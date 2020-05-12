@@ -41,6 +41,12 @@
    - https://www.smartclient.com/smartgwt/showcase/#featured_restfulds 
 
 
+#### May 12 2020:
+Top, Left Application layout set up. And then some cosmetic changes. 
+##### Learnings: A good way to build out and add HTMLPane and its static contents is to use an online HTML builder such as https://html-online.com/editor/. This will really save a lot of time on repetitive wasteful gwt compile cycles (that do take rather long), only to find that the html content is slightly mis-aligned. (:facepalm)
+
+
+
 #### Plan for Week of May 11 2020 -
 1. Set up Datasources for a basic IPO BookBuilding Application - Objects are BidSession, Bid, Reference Data of Institutional investors.
 2. Explore Single SignOn / Tokens / Expiry page
