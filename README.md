@@ -46,6 +46,12 @@ Top, Left Application layout set up. And then some cosmetic changes.
 ##### Learnings: A good way to build out and add HTMLPane and its static contents is to use an online HTML builder such as https://html-online.com/editor/. This will really save a lot of time on repetitive wasteful gwt compile cycles (that do take rather long), only to find that the html content is slightly mis-aligned. (:facepalm)
 
 
+#### May 13,14 2020:
+Reading up on GWT Multi module projects, Activity-History-Places concept, Code Splitting - ```GWT.runAsync()```.
+
+- Activity Mapper, Activity Manager, Places - https://ronanquillevere.github.io/2013/03/03/activities-places-intro.html#.Xr0GKxMvMnU
+- http://blog.ltgt.net/gwt-21-activities-nesting-yagni/
+
 
 #### Plan for Week of May 11 2020 -
 Here's a screenshot of the updated webapp. I will update this from time to time.
@@ -53,6 +59,8 @@ Here's a screenshot of the updated webapp. I will update this from time to time.
 ![Webapp Screenshot](extras/webapp.png?raw=true)
 
 
-1. Set up Datasources for a basic IPO BookBuilding Application - Objects are BidSession, Bid, Reference Data of Institutional investors.
-2. Explore Single SignOn / Tokens / Expiry page
-3. Explore Server Push / Messaging from Server
+~1. Set up Datasources for a basic IPO BookBuilding Application - Objects are BidSession, Bid, Reference Data of Institutional investors.~
+~2. Explore Single SignOn / Tokens / Expiry page~
+~3. Explore Server Push / Messaging from Server~
+1. Converting current project into a multi module Maven project.
+2. Implement Code Splitting to lazy load modules.
