@@ -59,8 +59,9 @@ Here's a screenshot of the updated webapp. I will update this from time to time.
 ![Webapp Screenshot](extras/webapp.png?raw=true)
 
 
-~1. Set up Datasources for a basic IPO BookBuilding Application - Objects are BidSession, Bid, Reference Data of Institutional investors.~
-~2. Explore Single SignOn / Tokens / Expiry page~
-~3. Explore Server Push / Messaging from Server~
+~1. Set up Datasources for a basic IPO BookBuilding Application - Objects are BidSession, Bid, Reference Data of Institutional investors.
+2. Explore Single SignOn / Tokens / Expiry page
+3. Explore Server Push / Messaging from Server~
+
 1. Converting current project into a multi module Maven project.
 2. Implement Code Splitting to lazy load modules.
