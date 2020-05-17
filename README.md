@@ -83,5 +83,5 @@ Here's a screenshot of the updated webapp. I will update this from time to time.
 2. Explore Single SignOn / Tokens / Expiry page
 3. Explore Server Push / Messaging from Server~
 
-[x] Converting current project into a multi module Maven project.
-[] Implement Code Splitting to lazy load modules.
+<input type='checkbox' value='Converting current project into a multi module Maven project.' checked=true />
+<input type='checkbox' value='Implement Code Splitting to lazy load modules.' />
