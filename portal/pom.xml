@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.vidhansu.app</groupId>
+	<artifactId>ipobb-moaa</artifactId>
+	<version>0.0.1-RC1</version>
+	<packaging>pom</packaging>
+
+	<name>IPO Book Building Mother of All App</name>
+
+	<modules>
+		<module>commons</module>		
+		<module>bidorderapp</module>
+		<module>bidsessionapp</module>
+		<module>portal</module>
+	</modules>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.enforcer.plugin.version>3.0.0</maven.enforcer.plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<smartgwtGroupId>com.isomorphic</smartgwtGroupId>
+		<smartgwtVersion>12.1-p</smartgwtVersion>
+		<isomorphicGroupId>com.isomorphic.smartgwt.eval</isomorphicGroupId>
+		<isomorphicVersion>12.1-p20200506</isomorphicVersion>
+		<gwtVersion>2.8.2</gwtVersion>
+		<mainPortalModule>portal</mainPortalModule>
+		<mainPortalArtifactId>ipobb-portal</mainPortalArtifactId>
+		<smartgwt.home>/Users/anand/mybundles/smartgwtee-12.1p</smartgwt.home>
+	</properties>
+
+	<build>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>${maven.enforcer.plugin.version}</version>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.1</version>
+					<configuration>
+						<maxmem>1g</maxmem>
+						<source>${maven.compiler.source}</source>
+						<target>${maven.compiler.target}</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
+
+	<dependencies />
+				
+</project>
