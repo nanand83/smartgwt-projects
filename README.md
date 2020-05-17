@@ -57,19 +57,19 @@ Reading up on GWT Multi module projects, Activity-History-Places concept, Code S
 Converted existing ant build project into a multi module maven project. Here's the project structure:
 
 ```
-				ipobb-moaa
+				ipobb-moaa (pom)
 				|
 				|
-				|__ ipobb-commons
+				|__ ipobb-commons (jar)
 				|
 				|
-				|__ ipobb-bidorder
+				|__ ipobb-bidorder (jar)
 				|
 				|
-				|__ ipobb-bidsession
+				|__ ipobb-bidsession (jar)
 				|
 				|
-				|__ ipobb-portal
+				|__ ipobb-portal (war)
 ```
 
 
@@ -83,5 +83,5 @@ Here's a screenshot of the updated webapp. I will update this from time to time.
 2. Explore Single SignOn / Tokens / Expiry page
 3. Explore Server Push / Messaging from Server~
 
-[-] Converting current project into a multi module Maven project
-[ ] Implement Code Splitting to lazy load modules.
+[x] Converting current project into a multi module Maven project.
+[] Implement Code Splitting to lazy load modules.
