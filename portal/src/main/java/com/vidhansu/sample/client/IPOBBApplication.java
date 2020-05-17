@@ -1,4 +1,4 @@
-package com.smartgwt.sample.client;
+package com.vidhansu.sample.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.smartgwt.client.data.Criteria;

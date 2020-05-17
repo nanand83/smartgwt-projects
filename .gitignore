@@ -10,3 +10,5 @@ portal/war/WEB-INF/deploy
 portal/war/builtinds/sc
 */target
 .settings
+portal/war/builtinds/*.cache.js
+war_bkp/

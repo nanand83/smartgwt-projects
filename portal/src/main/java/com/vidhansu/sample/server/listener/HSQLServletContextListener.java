@@ -13,7 +13,7 @@
  *  copied or moved from this file.
  */
 
-package com.smartgwt.sample.server.listener;
+package com.vidhansu.sample.server.listener;
 
 import java.io.File;
 import java.io.FileInputStream;

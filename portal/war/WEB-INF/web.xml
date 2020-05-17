@@ -16,7 +16,7 @@
     
      <servlet>
 	     <servlet-name>CustomAfterInitServlet</servlet-name>
-	     <servlet-class>com.smartgwt.sample.server.servlet.CustomAfterInitServlet</servlet-class>
+	     <servlet-class>com.vidhansu.sample.server.servlet.CustomAfterInitServlet</servlet-class>
 	     <load-on-startup>2</load-on-startup>
  	 </servlet>
     <!-- Dynamic Compression -->

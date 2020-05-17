@@ -1,4 +1,4 @@
-package com.smartgwt.sample.client;
+package com.vidhansu.sample.client;
 
 import java.util.Date;
 

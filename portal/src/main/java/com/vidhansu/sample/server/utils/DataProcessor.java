@@ -1,4 +1,4 @@
-package com.smartgwt.sample.server.utils;
+package com.vidhansu.sample.server.utils;
 
 import java.io.IOException;
 import java.io.InputStream;

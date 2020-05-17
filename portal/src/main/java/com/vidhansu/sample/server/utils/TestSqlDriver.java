@@ -1,4 +1,4 @@
-package com.smartgwt.sample.server.utils;
+package com.vidhansu.sample.server.utils;
 import java.sql.*;
 
 

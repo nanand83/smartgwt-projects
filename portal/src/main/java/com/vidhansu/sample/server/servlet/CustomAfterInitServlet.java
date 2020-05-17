@@ -1,4 +1,4 @@
-package com.smartgwt.sample.server.servlet;
+package com.vidhansu.sample.server.servlet;
 
 
 import java.io.IOException;
@@ -11,7 +11,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 import com.isomorphic.base.Config;
-import com.smartgwt.sample.server.utils.CustomCrypto;
+import com.vidhansu.sample.server.utils.CustomCrypto;
 
 public class CustomAfterInitServlet implements Servlet {
 	
