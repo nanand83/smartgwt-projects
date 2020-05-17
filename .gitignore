@@ -8,4 +8,5 @@ portal/war/WEB-INF/db
 portal/war/WEB-INF/lib
 portal/war/WEB-INF/deploy
 portal/war/builtinds/sc
+*/target
 .settings

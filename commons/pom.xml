@@ -3,61 +3,67 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.vidhansu.app</groupId>
-	<artifactId>ipobb-moaa</artifactId>
-	<version>0.0.1-RC1</version>
-	<packaging>pom</packaging>
+	<parent>
+		<groupId>com.vidhansu.app</groupId>
+		<artifactId>ipobb-moaa</artifactId>
+		<version>0.0.1-RC1</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
 
-	<name>IPO Book Building Mother of All App</name>
+	<artifactId>ipobb-commons</artifactId>
+	<packaging>jar</packaging>
 
-	<modules>
-		<module>commons</module>		
-		<module>bidorderapp</module>
-		<module>bidsessionapp</module>
-		<module>portal</module>
-	</modules>
-
-	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.enforcer.plugin.version>3.0.0</maven.enforcer.plugin.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<smartgwtGroupId>com.isomorphic</smartgwtGroupId>
-		<smartgwtVersion>12.1-p</smartgwtVersion>
-		<isomorphicGroupId>com.isomorphic.smartgwt.eval</isomorphicGroupId>
-		<isomorphicVersion>12.1-p20200506</isomorphicVersion>
-		<gwtVersion>2.8.2</gwtVersion>
-		<mainPortalModule>portal</mainPortalModule>
-		<mainPortalArtifactId>ipobb-portal</mainPortalArtifactId>
-		<smartgwt.home>/Users/anand/mybundles/smartgwtee-12.1p</smartgwt.home>
-	</properties>
+	<name>IPO BookBuilding Common Utilities</name>
 
 	<build>
-		
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>${maven.enforcer.plugin.version}</version>
-			</plugin>
-		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/java/</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+		</resources>
 
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.8.1</version>
-					<configuration>
-						<maxmem>1g</maxmem>
-						<source>${maven.compiler.source}</source>
-						<target>${maven.compiler.target}</target>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+		<directory>${project.basedir}/target</directory>
+		<finalName>${project.artifactId}</finalName>
+		<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+		<testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+
+		<plugins>
+			<!-- GWT Maven Plugin -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>2.8.2</version>
+				<configuration>
+					<webappDirectory>${project.basedir}/war</webappDirectory>
+					<extraJvmArgs>-Xmx1g</extraJvmArgs>		            
+				</configuration>
+				<executions>
+					<execution>
+						<!-- This would switch off the GWT permutations compilation <phase>none</phase> -->
+						<goals>
+							<goal>compile</goal>
+							<!-- <goal>test</goal> -->
+							<!-- <goal>generateAsync</goal> -->
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+		        	<dependency>
+			            <groupId>org.ow2.asm</groupId>
+			            <artifactId>asm</artifactId>
+			            <version>6.2</version> <!-- Use newer version of ASM -->
+			        </dependency>
+	    		</dependencies>
+
+			</plugin>
+
+		</plugins>
 
 	</build>
 
 	<dependencies />
-				
+
 </project>

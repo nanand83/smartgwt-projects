@@ -1,3 +1,0 @@
-<DataSource ID="PrintCanvasTask" inheritsFrom="ComponentTask" Constructor="PrintCanvasTask">
-</DataSource>
-

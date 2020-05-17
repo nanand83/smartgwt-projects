@@ -1,4 +1,0 @@
-<DataSource ID="WindowMaximizeButton" inheritsFrom="ImgButton" Constructor="WindowMaximizeButton"
-            showLocalFieldsOnly="true" showSuperClassEvents="false">
-    <addGlobalId>false</addGlobalId>
-</DataSource>
