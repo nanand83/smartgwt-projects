@@ -72,6 +72,9 @@ Converted existing ant build project into a multi module maven project. Here's t
 				|__ ipobb-portal (war)
 ```
 
+#### May 18 2020:
+Set up Activities, Places and History for MainPortal. The key here is to create a static common ClientFactory to register the necessary classes. This is still a stub and some work is pending.
+
 
 #### Plan for Week of May 11 2020 -
 Here's a screenshot of the updated webapp. I will update this from time to time.
