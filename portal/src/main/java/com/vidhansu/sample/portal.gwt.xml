@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.6.1//EN"
    "http://www.gwtproject.org/doctype/2.6.1/gwt-module.dtd">
-<module rename-to="builtinds">
+<module rename-to="Portal">
     <inherits name='com.google.gwt.user.User'/>
 
     <!-- Inheriting SmartGwtTools picks up Enterprise resources since the developer console may
@@ -57,6 +57,6 @@
                                         is-multi-valued="true"/> -->
     <!-- <extend-configuration-property name="scriptInjector.pageRelativeModulePath"
                                         value="builtinds=builtinds"/> -->
-
+	<inherits name="com.vidhansu.commons.Commons" />
     <entry-point class='com.vidhansu.sample.client.IPOBBApplication'/>
 </module>

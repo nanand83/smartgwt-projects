@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.6.1//EN"
+   "http://www.gwtproject.org/doctype/2.6.1/gwt-module.dtd">
+<module rename-to="Bidsession">
+    <inherits name='com.google.gwt.user.User'/>
+
+    <inherits name="com.smartclient.theme.enterprise.Enterprise"/>
+    <inherits name="com.smartgwtee.SmartGwtEE"/>
+	<inherits name="com.vidhansu.commons.Commons" />
+    <entry-point class='com.vidhansu.bidsession.client.BidSessionApplication'/>
+</module>

@@ -1,7 +1,5 @@
 package com.vidhansu.sample.client;
 
-import java.util.Date;
-
 import com.smartgwt.client.data.DataSourceField;
 import com.smartgwt.client.data.OperationBinding;
 import com.smartgwt.client.data.RestDataSource;
@@ -11,20 +9,25 @@ import com.smartgwt.client.data.fields.DataSourceIntegerField;
 import com.smartgwt.client.data.fields.DataSourceTextField;
 import com.smartgwt.client.types.DSOperationType;
 import com.smartgwt.client.types.DSProtocol;
+import com.smartgwt.client.widgets.Canvas;
 import com.smartgwt.client.widgets.grid.CellFormatter;
 import com.smartgwt.client.widgets.grid.ListGrid;
 import com.smartgwt.client.widgets.grid.ListGridField;
 import com.smartgwt.client.widgets.grid.ListGridRecord;
+import com.vidhansu.sample.client.events.AppClickHandler;
 
 public class ApplicationListGrid extends ListGrid {
 	
-	public ApplicationListGrid(String user) {
+	public ApplicationListGrid() {
 		
 		setDataSource(setupDataSource());
+		
+		setWidth("20%");
 		
 		setShowHeader(false);
 		
 		ListGridField appNameField = new ListGridField("appName", "Application Name");
+		
 		appNameField.setCellFormatter(new CellFormatter() {  
             public String format(Object value, ListGridRecord record, int rowNum, int colNum) {  
                 if (value != null) {    
@@ -41,6 +44,8 @@ public class ApplicationListGrid extends ListGrid {
                 }  
             }  
         });  
+		
+		appNameField.addRecordClickHandler(new AppClickHandler());
 		
 		setFields(appNameField);
 	}
@@ -72,8 +77,7 @@ public class ApplicationListGrid extends ListGrid {
 		
 		return ds;
 	}
-	
-	
+		
 	
 }
 
