@@ -1,1 +1,0 @@
-<HTML><BODY><SCRIPT>window.location.replace("adminConsole.jsp?target=dsImporter");</SCRIPT></BODY></HTML>

@@ -5,20 +5,30 @@
 <totalRows>3</totalRows>  
 <data>  
 <record>  
+    <appId>90000</appId>  
+    <appName>IPO Book Building Portal</appName>
+    <placeCanonical>com.vidhansu.commons.client.placesandactivities.MainPortalPlace</placeCanonical>  
+    <has_access>true</has_access>  
+    <entitled>readonly</entitled>       
+</record>
+<record>  
     <appId>90001</appId>  
-    <appName>Bid Session Application</appName>  
+    <appName>Bid Session Application</appName>
+    <placeCanonical>com.vidhansu.commons.client.placesandactivities.BidSessionPlace</placeCanonical>  
     <has_access>true</has_access>  
     <entitled>readonly</entitled>       
 </record>
 <record>  
     <appId>90002</appId>  
-    <appName>Bid Entry System</appName>  
+    <appName>Bid Order Application</appName>  
+    <placeCanonical>com.vidhansu.commons.client.placesandactivities.BidOrderPlace</placeCanonical>
     <has_access>true</has_access>  
     <entitled>readwrite</entitled>       
 </record>  
 <record>  
     <appId>90003</appId>  
-    <appName>XYZ System</appName>  
+    <appName>Another XYZ System</appName>
+    <placeCanonical></placeCanonical>  
     <has_access>false</has_access>  
     <entitled></entitled>       
 </record>  

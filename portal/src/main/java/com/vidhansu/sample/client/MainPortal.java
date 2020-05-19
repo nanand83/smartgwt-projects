@@ -1,21 +1,22 @@
 package com.vidhansu.sample.client;
 
+import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.smartgwt.client.data.Criteria;
 import com.smartgwt.client.types.VisibilityMode;
+import com.smartgwt.client.widgets.Canvas;
 import com.smartgwt.client.widgets.HTMLPane;
 import com.smartgwt.client.widgets.grid.ListGrid;
+import com.smartgwt.client.widgets.layout.HLayout;
 import com.smartgwt.client.widgets.layout.SectionStack;
 import com.smartgwt.client.widgets.layout.SectionStackSection;
 import com.smartgwt.client.widgets.layout.VLayout;
-import com.vidhansu.commons.client.IPOBBWidget;
 
-public class MainPortal extends IPOBBWidget {
+public class MainPortal extends VLayout {
 	
-
-	public static IPOBBWidget mainPortalWidget = new MainPortal();
 	private ListGrid alg = null;
-	VLayout phLayout = null;
+	HLayout phLayout = null;
+	SimplePanel container = null;
 	
 	public MainPortal() {
 		setWidth100();  
@@ -38,7 +39,7 @@ public class MainPortal extends IPOBBWidget {
 	    				"<h1>IPO Book Building Suite</span></h1>" +
 	    				"</td>" +
 	    				"<td style='width: 23%;'>" +
-	    				"<h4>Welcome User!<br />" +
+	    				"<h4>Welcome User..<br />" +
 	    				"<a href=''>Admin Console</a> | <a href=''>User Guide</a> | <a href=''>Support</a></h4>" +
 	    				"</td>" +
 	    				"</tr>" +
@@ -55,33 +56,43 @@ public class MainPortal extends IPOBBWidget {
 	    //topLayout.addChild(htmlPane);
 	    addMember(htmlPane);
 	    
-	    SectionStack layout = new SectionStack();  
-	    layout.setWidth100();  
-	    layout.setShowResizeBar(false);  
-	    layout.setVisibilityMode(VisibilityMode.MULTIPLE);  
-	    layout.setAnimateSections(true);  
-	
+	    HLayout bottomLayout = new HLayout();
+	    bottomLayout.setWidth100();
+	    bottomLayout.setHeight100();
+	    bottomLayout.setMembersMargin(10);
+	    
+	    SectionStack sideSectionStack = new SectionStack();  
+	    sideSectionStack.setShowResizeBar(false);  
+	    sideSectionStack.setVisibilityMode(VisibilityMode.MULTIPLE);  
+	    
 	    SectionStackSection appListSection = new SectionStackSection("Applications");
 	    appListSection.addItem(alg);
 	    appListSection.setExpanded(true);
 	    appListSection.setCanCollapse(false);
 	    
-	    layout.addSection(appListSection);
+	    sideSectionStack.addSection(appListSection);
+	    sideSectionStack.setWidth("280");
+	    	    
 	    
-	    SectionStackSection appPlaceHolderSection = new SectionStackSection("App");
-	    appPlaceHolderSection.setExpanded(true);
-	    appPlaceHolderSection.setCanCollapse(false);
-	    phLayout = new VLayout();
-	    phLayout.setID("mainAppLayout");
-	    phLayout.setHeight100();
-	    phLayout.setWidth100();
-	    phLayout.setBackgroundColor("grey");
-		phLayout.setMembersMargin(10);
-		appPlaceHolderSection.addItem(phLayout);
+	    SectionStack mainSectionStack = new SectionStack();
+	    mainSectionStack.setShowResizeBar(false);  
+	    mainSectionStack.setVisibilityMode(VisibilityMode.MULTIPLE);
+	    
+	    SectionStackSection mainSection = new SectionStackSection("Content");
+	    mainSection.setExpanded(true);
+	    mainSection.setCanCollapse(false);
+	    container = new SimplePanel();
+	    Canvas containerCanvas = new Canvas();
+	    containerCanvas.addChild(container);
+		mainSection.addItem(containerCanvas);
 		
-	    layout.addSection(appPlaceHolderSection);
-	    
-	    addMember(layout);
+	    mainSectionStack.addSection(mainSection);
+	    mainSectionStack.setWidth("*");
+		
+		bottomLayout.addMember(sideSectionStack);
+		bottomLayout.addMember(mainSectionStack);
+		
+	    addMember(bottomLayout);
 	}
 	
 	public void setSSOUser(String ssoUser) {
@@ -94,7 +105,7 @@ public class MainPortal extends IPOBBWidget {
 		phLayout.addChild(w);
 	}
 	
-	public static IPOBBWidget getMainPortalView() {
-		return mainPortalWidget;
+	public SimplePanel getContainer() {
+		return this.container;
 	}
 }

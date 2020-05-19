@@ -22,8 +22,6 @@ public class ApplicationListGrid extends ListGrid {
 		
 		setDataSource(setupDataSource());
 		
-		setWidth("20%");
-		
 		setShowHeader(false);
 		
 		ListGridField appNameField = new ListGridField("appName", "Application Name");
@@ -32,9 +30,13 @@ public class ApplicationListGrid extends ListGrid {
             public String format(Object value, ListGridRecord record, int rowNum, int colNum) {  
                 if (value != null) {    
                     boolean has_access = record.getAttributeAsBoolean("has_access");
+                    Integer appId = record.getAttributeAsInt("appId");
                     String entitlement = record.getAttributeAsString("entitled");
                     
                     if (has_access) {
+                    	if (appId == 90000) {	//Home
+                    		return "<h3><b>Home</b></h3>";
+                    	}
                 		return (String) value + " (" + entitlement + ")";
                     } else {
                     	return "<i>" + (String) value + " (No access)</i>";                    	

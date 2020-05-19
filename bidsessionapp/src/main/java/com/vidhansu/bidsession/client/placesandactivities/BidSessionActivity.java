@@ -1,4 +1,4 @@
-package com.vidhansu.sample.client.placesactivities;
+package com.vidhansu.bidsession.client.placesandactivities;
 
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
@@ -6,32 +6,31 @@ import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.smartgwt.client.util.SC;
+import com.vidhansu.bidsession.client.BidSessionApp;
 import com.vidhansu.commons.client.ClientFactory;
-import com.vidhansu.commons.client.placesandactivities.MainPortalPlace;
-import com.vidhansu.sample.client.MainPortalDashboard;
+import com.vidhansu.commons.client.placesandactivities.BidSessionPlace;
 
-public class MainPortalActivity extends AbstractActivity {
-
+public class BidSessionActivity extends AbstractActivity {
 	private String ssoUser;
 	
-	public MainPortalActivity(MainPortalPlace place) {
+	public BidSessionActivity(BidSessionPlace place) {
 		this.ssoUser = place.getName();
 	}
 	
 	@Override
-	/* TODO: Reusable view - View creation is costly and not desired */
 	public void start(AcceptsOneWidget containerWidget, EventBus eventBus) {
-		Widget w = new MainPortalDashboard().asWidget();
+		SC.logWarn("Caught an event, now triggering bidsession app");
+		Widget w = new BidSessionApp().asWidget();
+		//widget.setSSOUser(this.ssoUser);
 		containerWidget.setWidget(w);		
 	}
 	
 	@Override
     public String mayStop() {
-        return "Moving out of the MainPortalActivity";
+        return "Moving out of the BidSession Place";
     }
 
     public void goTo(Place place) {
-    	SC.logWarn("In MainPortalActivity, going to place:"+place);
         ClientFactory.getPlaceController().goTo(place);
     }
     
@@ -43,5 +42,4 @@ public class MainPortalActivity extends AbstractActivity {
     			this.ssoUser + 
     			"]";
     }
-
 }

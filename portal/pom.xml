@@ -38,7 +38,8 @@
 				<version>2.8.2</version>
 				<configuration>
 					<webappDirectory>${project.basedir}/war</webappDirectory>
-					<extraJvmArgs>-Xmx1g</extraJvmArgs>		            
+					<extraJvmArgs>-Xmx1g</extraJvmArgs>
+					<forceCompilation>true</forceCompilation>		            
 				</configuration>
 				<executions>
 					<execution>
@@ -50,13 +51,7 @@
 						</goals>
 					</execution>
 				</executions>
-				<dependencies>
-		        	<dependency>
-			            <groupId>org.ow2.asm</groupId>
-			            <artifactId>asm</artifactId>
-			            <version>6.2</version> <!-- Use newer version of ASM -->
-			        </dependency>
-	    		</dependencies>
+				
 
 			</plugin>
 
@@ -81,118 +76,6 @@
 
 	<dependencies>
 	
-		<!--  <dependency>
-			<groupId>com.google.gwt</groupId>
-			<artifactId>gwt-servlet</artifactId>
-			<version>${gwtVersion}</version>
-			<scope>runtime</scope>
-		</dependency>-->
-
-		<dependency>
-			<groupId>com.google.gwt</groupId>
-			<artifactId>gwt-user</artifactId>
-			<version>${gwtVersion}</version>
-			<scope>provided</scope>
-		</dependency> 
-		
-		<dependency>
-			<groupId>com.isomorphic</groupId>
-			<artifactId>smartgwtee</artifactId>
-			<version>${smartgwtVersion}</version>
-			<scope>provided</scope>
-		</dependency>
-		 
-		 
-		<dependency>
-			<groupId>com.isomorphic</groupId>
-			<artifactId>smartgwt-skins</artifactId>
-			<version>${smartgwtVersion}</version>
-			<scope>provided</scope>
-		</dependency>
-		
-		
-		<dependency>
-			<groupId>${isomorphicGroupId}</groupId>
-			<artifactId>isomorphic-js-parser</artifactId>
-			<version>${isomorphicVersion}</version>
-			<scope>provided</scope>
-		</dependency>
-		
-		
-		<dependency>
-			<groupId>${isomorphicGroupId}</groupId>
-			<artifactId>isomorphic-tools</artifactId>
-			<version>${isomorphicVersion}</version>
-			<scope>provided</scope>
-		</dependency>		
-		
-		<dependency>
-			<groupId>${isomorphicGroupId}</groupId>
-			<artifactId>isomorphic-core-rpc</artifactId>
-			<version>${isomorphicVersion}</version>			
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.apache.geronimo.specs</groupId>
-					<artifactId>geronimo-stax-api_1.0_spec</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>stax</groupId>
-					<artifactId>stax-api</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>commons-cli</groupId>
-					<artifactId>commons-cli</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.apache.velocity</groupId>
-					<artifactId>velocity</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>${isomorphicGroupId}</groupId>
-			<artifactId>isomorphic-sql</artifactId>
-			<version>${isomorphicVersion}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>${isomorphicGroupId}</groupId>
-			<artifactId>isomorphic-compression</artifactId>
-			<version>${isomorphicVersion}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>${isomorphicGroupId}</groupId>
-			<artifactId>isomorphic-assembly</artifactId>
-			<version>${isomorphicVersion}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>${isomorphicGroupId}</groupId>
-			<artifactId>isomorphic-spring</artifactId>
-			<version>${isomorphicVersion}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>${isomorphicGroupId}</groupId>
-			<artifactId>isomorphic-content-export</artifactId>
-			<version>${isomorphicVersion}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>${isomorphicGroupId}</groupId>
-			<artifactId>isomorphic-hibernate</artifactId>
-			<version>${isomorphicVersion}</version>		
-			<scope>provided</scope>	
-		</dependency>
-
 		<dependency>
 		    <groupId>org.hsqldb</groupId>
 		    <artifactId>hsqldb</artifactId>
