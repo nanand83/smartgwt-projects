@@ -75,17 +75,23 @@ Converted existing ant build project into a multi module maven project. Here's t
 #### May 18 2020:
 Set up Activities, Places and History for MainPortal. The key here is to create a static common ClientFactory to register the necessary classes. This is still a stub and some work is pending.
 
+#### May 19 2020:
+- Approach 1: Multiple independent GWT modules compiled sepearately and including the individual cache.js manually in index.html. The only way to share state between modules (inorder to implement Place-Activities) is using JSNI - wasn't successful in navigating from Main Portal to an App and back. The approach followed was to register and save eventBus, placeController, placeActivity maps, etc. as JS Window objects using $wnd. Very challenging.
+- Approach 2: Create a parent module definition and include all inherited modules. Disable GWT compile on all children/dependent maven modules and activate GWT compile only on the war maven module. This approach worked like a charm. The downside though, is that each module could not be hosted as a standalone app. However, this is the recommended approach per http://www.gwtproject.org/doc/latest/DevGuideOrganizingProjects.html
 
-#### Plan for Week of May 11 2020 -
 Here's a screenshot of the updated webapp. I will update this from time to time.
 
-![Webapp Screenshot](extras/webapp.png?raw=true)
+![Webapp Screenshot # 1](extras/webapp.png?raw=true)
+![Webapp Screenshot # 2](extras/webapp1.png?raw=true)
 
 
+
+#### TODOs 
 ~1. Set up Datasources for a basic IPO BookBuilding Application - Objects are BidSession, Bid, Reference Data of Institutional investors.
 2. Explore Single SignOn / Tokens / Expiry page
 3. Explore Server Push / Messaging from Server~
 
 
 1. Converting current project into a multi module Maven project - <font color='green'>DONE</font>
-2. Implement Code Splitting to lazy load modules.
+2. Implement Activities, Places, History - DONE
+3. Implement Code Splitting to lazyload modules.
