@@ -12,3 +12,4 @@ portal/war/builtinds/sc
 .settings
 portal/war/builtinds/*.cache.js
 war_bkp/
+gwt-unitCache

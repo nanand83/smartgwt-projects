@@ -17,8 +17,7 @@ public class AppClickHandler implements RecordClickHandler {
 		Place gotoPlace = ClientFactory.getRegisteredPlace(placeCanonical);
 		SC.logWarn("Gotoplace: "+gotoPlace);
         
-		ClientFactory.getPlaceController().goTo(gotoPlace);
-        
+		ClientFactory.getPlaceController().goTo(gotoPlace);        
 	}
 
 }

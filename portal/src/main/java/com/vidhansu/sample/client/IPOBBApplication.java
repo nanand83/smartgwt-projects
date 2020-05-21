@@ -1,6 +1,5 @@
 package com.vidhansu.sample.client;
 
-import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.core.client.EntryPoint;
@@ -9,13 +8,12 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.Widget;
 import com.smartgwt.client.util.SC;
 import com.smartgwt.client.widgets.layout.VLayout;
-import com.vidhansu.commons.client.AppActivityMapper;
 import com.vidhansu.commons.client.AppPlaceHistoryMapper;
 import com.vidhansu.commons.client.ClientFactory;
 import com.vidhansu.commons.client.placesandactivities.MainPortalPlace;
-import com.vidhansu.sample.client.placesactivities.MainPortalActivity;
 
 public class IPOBBApplication extends VLayout implements EntryPoint {
 
@@ -31,12 +29,12 @@ public class IPOBBApplication extends VLayout implements EntryPoint {
 		EventBus eventBus = ClientFactory.getEventBus();
 		PlaceController pctrl = ClientFactory.getPlaceController();
 		
-		/* Create a new Place and Activity */
+		/* Create a new Place and View */
 		MainPortalPlace mainPortalPlace = new MainPortalPlace(ssoUser);
-		Activity mainPortalActivity = new MainPortalActivity(mainPortalPlace);
-		ClientFactory.registerPlaceActivity(mainPortalPlace, mainPortalActivity);
+		Widget mainPortalDashboard = new MainPortalDashboard().asWidget();
+		ClientFactory.registerPlaceView(mainPortalPlace, mainPortalDashboard);
 		
-        ActivityMapper activityMapper = new AppActivityMapper();
+        ActivityMapper activityMapper = ClientFactory.getActivityMapperInstance();
         ActivityManager activityManager = new ActivityManager(activityMapper, eventBus);
         activityManager.setDisplay(portal.getContainer());
         

@@ -1,4 +1,4 @@
-package com.vidhansu.bidsession.client.placesandactivities;
+package com.vidhansu.commons.client;
 
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
@@ -6,40 +6,41 @@ import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.smartgwt.client.util.SC;
-import com.vidhansu.bidsession.client.BidSessionApp;
-import com.vidhansu.commons.client.ClientFactory;
-import com.vidhansu.commons.client.placesandactivities.BidSessionPlace;
+import com.vidhansu.commons.client.placesandactivities.IPOBBPlace;
 
-public class BidSessionActivity extends AbstractActivity {
+public class IPOBBActivity extends AbstractActivity {
 	private String ssoUser;
+	private Widget view;
 	
-	public BidSessionActivity(BidSessionPlace place) {
-		this.ssoUser = place.getName();
+	public IPOBBActivity(Place place, Widget view) {
+		this.ssoUser = ((IPOBBPlace) place).getName();
+		this.view = view;
 	}
-	
-	@Override
+		
+	/* Reuses the view */
+	@Override	
 	public void start(AcceptsOneWidget containerWidget, EventBus eventBus) {
-		SC.logWarn("Caught an event, now triggering bidsession app");
-		Widget w = new BidSessionApp().asWidget();
-		//widget.setSSOUser(this.ssoUser);
-		containerWidget.setWidget(w);		
+		containerWidget.setWidget(this.view);		
 	}
 	
-	@Override
-    public String mayStop() {
-        return "Moving out of the BidSession Place";
-    }
-
     public void goTo(Place place) {
+    	SC.logWarn("In " + this.getClass().getSimpleName() + ", going to Place: "+place);
         ClientFactory.getPlaceController().goTo(place);
     }
     
+	@Override
+    public String mayStop() {
+        return "Moving out of this IPOBBActivity";
+    }
+	
     @Override
     public String toString() {
     	return "Activity: [" + 
     			this.getClass().getCanonicalName() + 
     			"], SSOUser: [" + 
     			this.ssoUser + 
+    			"], View: [" + 
+    			this.view + 
     			"]";
     }
 }

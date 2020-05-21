@@ -1,15 +1,12 @@
 package com.vidhansu.bidsession.client;
 
-import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceController;
+import com.google.gwt.user.client.ui.Widget;
 import com.smartgwt.client.util.SC;
-import com.vidhansu.bidsession.client.placesandactivities.BidSessionActivity;
-import com.vidhansu.bidsession.client.placesandactivities.BidSessionAppActivityMapper;
-import com.vidhansu.commons.client.AppActivityMapper;
 import com.vidhansu.commons.client.ClientFactory;
 import com.vidhansu.commons.client.placesandactivities.BidSessionPlace;
 
@@ -24,13 +21,15 @@ public class BidSessionApplication implements EntryPoint {
 		EventBus eventBus = ClientFactory.getEventBus();
 		PlaceController pctrl = ClientFactory.getPlaceController();
 		
-		/* Create a new Place and Activity and Register */
+		/* Create a new Place and View 
+		 * Register
+		 */
 		BidSessionPlace bidSessionPlace = new BidSessionPlace(ssoUser);
-		Activity bidSessionActivity = new BidSessionActivity(bidSessionPlace);
-		ClientFactory.registerPlaceActivity(bidSessionPlace, bidSessionActivity);
+		Widget bidSessionView = new BidSessionApp().asWidget();
 		
-		/* TODO: Get a singleton of App Activity mapper, ActivityManager */ 
-        ActivityMapper activityMapper = new AppActivityMapper();
+		ClientFactory.registerPlaceView(bidSessionPlace, bidSessionView);
+		
+		ActivityMapper activityMapper = ClientFactory.getActivityMapperInstance();
         ActivityManager activityManager = new ActivityManager(activityMapper, eventBus);
         
         //Testing..
