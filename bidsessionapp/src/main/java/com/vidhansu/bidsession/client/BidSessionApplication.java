@@ -8,6 +8,7 @@ import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.user.client.ui.Widget;
 import com.smartgwt.client.util.SC;
 import com.vidhansu.commons.client.ClientFactory;
+import com.vidhansu.commons.client.placesandactivities.AppActivityMapper;
 import com.vidhansu.commons.client.placesandactivities.BidSessionPlace;
 
 public class BidSessionApplication implements EntryPoint {
@@ -21,15 +22,13 @@ public class BidSessionApplication implements EntryPoint {
 		EventBus eventBus = ClientFactory.getEventBus();
 		PlaceController pctrl = ClientFactory.getPlaceController();
 		
-		/* Create a new Place and View 
-		 * Register
-		 */
+		/* Create a new Place View and Register */
 		BidSessionPlace bidSessionPlace = new BidSessionPlace(ssoUser);
-		Widget bidSessionView = new BidSessionApp().asWidget();
+		BidSessionAppViewProvider vp = new BidSessionAppViewProvider();
+				
+		ClientFactory.registerPlaceViewProvider(bidSessionPlace, vp);
 		
-		ClientFactory.registerPlaceView(bidSessionPlace, bidSessionView);
-		
-		ActivityMapper activityMapper = ClientFactory.getActivityMapperInstance();
+		ActivityMapper activityMapper = new AppActivityMapper();
         ActivityManager activityManager = new ActivityManager(activityMapper, eventBus);
         
         //Testing..

@@ -11,17 +11,14 @@ import com.smartgwt.client.widgets.form.fields.TextItem;
 import com.smartgwt.client.widgets.layout.HLayout;
 
 public class BidSessionApp extends HLayout {
-
 	
+	TitleOrientation titleOrientation = TitleOrientation.LEFT;
+
 	/* Credits:
 	 * https://www.smartclient.com/smartgwt/showcase/#layout_form_titles */
 	/* TODO: Implement actual form here */
-	
-	TitleOrientation titleOrientation = TitleOrientation.LEFT;
-	
-	public BidSessionApp() {    	  
-        
-        final DynamicForm form = new DynamicForm();  
+	public BidSessionApp() {
+	    final DynamicForm form = new DynamicForm();  
         form.setWidth(250);  
           
         TextItem usernameItem = new TextItem();  

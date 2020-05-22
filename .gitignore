@@ -15,3 +15,4 @@ war_bkp/
 gwt-unitCache
 bidsessionapp/war/
 portal/war/Portal/
+war/WEB-INF/classes

@@ -57,7 +57,6 @@
                                         is-multi-valued="true"/> -->
     <!-- <extend-configuration-property name="scriptInjector.pageRelativeModulePath"
                                         value="builtinds=builtinds"/> -->
-	<inherits name="com.google.gwt.activity.Activity" />
 	<inherits name="com.vidhansu.commons.Commons" />
 	<inherits name="com.vidhansu.bidsession.Bidsession" />
 	

@@ -6,7 +6,9 @@ import com.smartgwt.client.widgets.Window;
 import com.smartgwt.client.widgets.layout.VLayout;
 
 public class MainPortalDashboard extends VLayout {
-	public MainPortalDashboard() {
+	
+	public MainPortalDashboard() { 
+
 		Label label = new Label("Welcome <b>User</b><br/>Here's your feed for today.");  
 	    label.setWidth100();  
 	    label.setHeight100();  
@@ -24,5 +26,5 @@ public class MainPortalDashboard extends VLayout {
 	    window.addItem(label); 
 	    
 	    addMember(window);
-	}
+	} 
 }

@@ -13,6 +13,7 @@ import com.smartgwt.client.util.SC;
 import com.smartgwt.client.widgets.layout.VLayout;
 import com.vidhansu.commons.client.AppPlaceHistoryMapper;
 import com.vidhansu.commons.client.ClientFactory;
+import com.vidhansu.commons.client.placesandactivities.AppActivityMapper;
 import com.vidhansu.commons.client.placesandactivities.MainPortalPlace;
 
 public class IPOBBApplication extends VLayout implements EntryPoint {
@@ -25,16 +26,15 @@ public class IPOBBApplication extends VLayout implements EntryPoint {
 		MainPortal portal = new MainPortal();
 		portal.setSSOUser(ssoUser);
 		
-		/* Do it only once and over here */
 		EventBus eventBus = ClientFactory.getEventBus();
 		PlaceController pctrl = ClientFactory.getPlaceController();
 		
-		/* Create a new Place and View */
+		/* Create a new Place */
 		MainPortalPlace mainPortalPlace = new MainPortalPlace(ssoUser);
-		Widget mainPortalDashboard = new MainPortalDashboard().asWidget();
-		ClientFactory.registerPlaceView(mainPortalPlace, mainPortalDashboard);
+		MainPortalViewProvider vp = new MainPortalViewProvider();
+		ClientFactory.registerPlaceViewProvider(mainPortalPlace, vp);
 		
-        ActivityMapper activityMapper = ClientFactory.getActivityMapperInstance();
+        ActivityMapper activityMapper = new AppActivityMapper();
         ActivityManager activityManager = new ActivityManager(activityMapper, eventBus);
         activityManager.setDisplay(portal.getContainer());
         
